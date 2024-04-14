@@ -3,6 +3,10 @@ import {map, Observable} from "rxjs";
 import {plainToInstance} from "class-transformer";
 
 
+
+interface ClassConstructor{
+    new (...args:any[]):{}
+}
 export function Serialize(dto:any){
     return UseInterceptors(new SerializeInterceptor(dto))
 }
